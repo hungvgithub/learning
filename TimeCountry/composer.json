@@ -1,0 +1,16 @@
+{
+    "name": "sosc/module-timecountry",
+    "description": "Show time country",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Sosc\\TimeCountry\\": ""
+        }
+    }
+}

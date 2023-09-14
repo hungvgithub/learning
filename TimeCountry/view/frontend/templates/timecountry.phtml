@@ -1,0 +1,26 @@
+<?php
+/* @var $block \Sosc\TimeCountry\Block\Time\Country */
+/* @var  $escaper \Magento\Framework\Escaper */
+
+$countryList = $block->getListCountry();
+?>
+<select class="country">
+    <?php foreach ($countryList as $key => $value): ?>
+        <option value="<?= $value ?>"><?= $key ?></option>
+    <?php endforeach; ?>
+</select>
+
+</br>
+
+<label for="time-select"><?= __('Time Select: ')?></label>
+<input type="text" class="time-select" placeholder="Time Country"/>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Sosc_TimeCountry/js/timecountry": {
+                "url": "<?= $block->getActionUrl() ?>"
+            }
+        }
+    }
+</script>

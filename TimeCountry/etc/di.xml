@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="countryUsa" type="Sosc\TimeCountry\Service\Time\ServiceCountry">
+        <arguments>
+            <argument name="countryCode" xsi:type="string">US</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="countryVietnam" type="Sosc\TimeCountry\Service\Time\ServiceCountry">
+        <arguments>
+            <argument name="countryCode" xsi:type="string">VN</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="countryEngland" type="Sosc\TimeCountry\Service\Time\ServiceCountry">
+        <arguments>
+            <argument name="countryCode" xsi:type="string">EN</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Sosc\TimeCountry\Controller\TimeCountry\HandleTimeCountry">
+        <arguments>
+            <argument name="arrayNameCountry" xsi:type="array">
+                <item name="vn" xsi:type="object">countryVietnam</item>
+                <item name="us" xsi:type="object">countryUsa</item>
+                <item name="en" xsi:type="object">countryEngland</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
